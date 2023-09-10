@@ -25,13 +25,13 @@ const VehicleList = () => {
             {vehicle.media.map((media, index) => {
               return (index === 0)
                 ? (
-                  <div className="relative">
-                    <div className="main__col" key={vehicle.id}>
+                  <div className="relative" key={vehicle.id}>
+                    <div className="main__col">
                       <div>
                         <img src={media.url} alt="vehicle" />
                       </div>
                       <div className="card">
-                        <p className="title" key={vehicle.id}>
+                        <p className="title">
                           <span>
                             {media.name}
                             {' '}
@@ -39,7 +39,7 @@ const VehicleList = () => {
                           </span>
                         </p>
                         <p>
-                          From
+                          From 
                           <span className="price">{vehicle.price}</span>
                         </p>
                         <p>The pinnacle of refined capability</p>
