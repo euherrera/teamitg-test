@@ -12,6 +12,7 @@ export default function useData() {
       .then((response) => setVehicles(response))
       .catch((err) => setError(err))
       .finally(() => setLoading(false));
+    
   }, []);
 
   return ([
