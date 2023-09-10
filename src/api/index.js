@@ -17,11 +17,10 @@ export default async function getData() {
   ));
 
   let price;
-  const arr = [];
+  const arr = new Array();
   Object.entries(url).map(([key, value]) => (
 
     axios.get(value)
-
       .then((resp) => {
         price = (resp.data.price && resp.data.price !== undefined) ? resp.data.price : '';
         if (price) {
@@ -30,7 +29,6 @@ export default async function getData() {
           data[key].meta = meta;
           arr.push(data[key]);
         }
-
         return price;
       })
       .catch(() => {

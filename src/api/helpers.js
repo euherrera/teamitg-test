@@ -4,7 +4,9 @@
  * @param {string} apiUrl
  * @return {Promise<Object>}
  */
-export async function request(arr) {
+import axios from 'axios';
+ export async function request(arr) {
   // console.log(arr);
+  
   return arr;
 }
