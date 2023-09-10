@@ -1,6 +1,7 @@
 {
   "name": "technical-test",
   "version": "1.0.0",
+  "homepage": "https://euherrera.github.io/teamitg-test/",
   "description": "",
   "repository": "https://github.com/connect-group/frontend-technical-test",
   "scripts": {
