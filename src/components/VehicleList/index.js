@@ -39,7 +39,7 @@ const VehicleList = () => {
                           </span>
                         </p>
                         <p>
-                          From 
+                          From
                           <span className="price">{vehicle.price}</span>
                         </p>
                         <p>The pinnacle of refined capability</p>

@@ -5,6 +5,6 @@
  * @return {Promise<Object>}
  */
 export async function request(arr) {
-  console.log(arr);
+  // console.log(arr);
   return arr;
 }

@@ -33,8 +33,8 @@ export default async function getData() {
 
         return price;
       })
-      .catch((e) => {
-        console.error(e.message); // "oh, no!"
+      .catch(() => {
+        // console.error(e.message);
       })
 
   ));
