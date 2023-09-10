@@ -66,3 +66,4 @@ Use linting to format the code and autofix most of the formatting issues
 ```shell script
 npm run lint
 ```
+
