@@ -5,9 +5,9 @@
   "repository": "https://github.com/connect-group/frontend-technical-test",
   "scripts": {
     "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
     "predeploy" : "npm run build",
     "deploy" : "gh-pages -d build",
+    "build": "webpack --mode production",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "lint": "npm run lint:js && npm run lint:css",
