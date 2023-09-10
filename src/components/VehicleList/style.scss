@@ -53,17 +53,19 @@ body {
           
     }
         
-    &img {
-      width: 100%;
-  
-      @media all and (max-width:767px) {
-        width: 150px;
-      }
-    }
+    
   }
 
 }
+.main img {
+  
+    width: 100%;
 
+    @media all and (max-width:767px) {
+      width: 150px;
+    }
+  
+}
 
 .card {
   padding: 10px;
