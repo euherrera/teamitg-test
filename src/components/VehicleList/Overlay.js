@@ -13,7 +13,7 @@ const Overlay = (props) => {
     return <div data-testid="error">{ error }</div>;
   }
   return (
-    <div className="partial">
+    <div className="overlayInner">
       <div>
         <h1>{template}</h1>
         <h1>{value}</h1>
