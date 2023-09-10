@@ -24,9 +24,11 @@ export default async function getData() {
       .then((resp) => {
         price = (resp.data.price && resp.data.price !== undefined) ? resp.data.price : '';
         if (price) {
-          const { meta } = resp.data;
+          const { meta, id, description } = resp.data;
           data[key].price = price;
           data[key].meta = meta;
+          data[key].id = id;
+          data[key].description = description;
           arr.push(data[key]);
         }
         return price;
@@ -38,6 +40,6 @@ export default async function getData() {
   ));
   request(arr);
   await axios.get(arr);
-  // console.log(arr);
+  console.log(arr);
   return arr;
 }

@@ -49,6 +49,8 @@ const VehicleList = () => {
                       <Overlay
                         template={vehicle.meta.emissions.template}
                         value={vehicle.meta.emissions.value}
+                        id={vehicle.id}
+                        description={vehicle.description}
                       />
                     </div>
                   </div>
