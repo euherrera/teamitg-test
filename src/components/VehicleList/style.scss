@@ -1,0 +1,133 @@
+* { 
+  border: 0;
+  margin: 0; 
+  padding: 0;
+}
+
+.root {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.VehicleList {
+  width: 100%;
+}
+
+body {
+  background: black;
+  font-family: arial;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  transform: translate(0%, 70%);
+  width: 100%;
+
+  @media all and (min-width:767px) and (max-width: 1023px) {
+    display: flex;
+    flex-flow: row wrap;
+
+    &--row {
+      flex: 0 0 50%;
+    }
+  }
+
+  @media all and (max-width: 768px) {
+    flex-flow: column;
+  }
+  @media all and (max-width: 1023px) {
+    transform: translate(0,0);
+  }
+
+}
+
+.main--row__col {
+  background: white;
+  padding-bottom: 10px;
+      
+  text-align: center;
+
+  @media all and (min-width:600px) {
+    flex: 1 1 0;
+  }
+
+  @media all and (max-width:767px) {
+    display: flex;
+        
+  }
+      
+  img {
+    width: 100%;
+
+    @media all and (max-width:767px) {
+      width: 150px;
+    }
+  }
+
+  
+}
+
+.card {
+  @media all and (max-width:767px) {
+
+    &:nth-child(2) {
+      width: 100%;
+    }
+  }
+}
+
+.card {
+  padding: 10px;
+
+  .title {
+    padding: 10px;
+    text-transform: uppercase;
+
+    span {
+      border-bottom: 3px solid black;
+      border-top: 3px solid black;
+    }
+        
+  }
+
+  p {
+
+    &:nth-child(2) {
+      padding: 10px;
+    }
+  }
+}
+
+.relative {
+  position: relative;
+
+  .overlay {
+    background: rgba(255,255,255);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &:hover {
+
+    .overlay {
+      display: block;
+    }
+  }
+}
+
+.partial {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+}
+ 
+
+
