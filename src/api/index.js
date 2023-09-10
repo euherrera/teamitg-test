@@ -21,8 +21,8 @@ export default async function getData() {
   Object.entries(url).map(([key, value]) => (
     axios.get(value)
       .then((resp) => {
-        price = (resp.data.price !== '' && resp.data.price !== undefined) ? resp.data.price : 'empty';
-        if (price !== 'empty') {
+        price = (resp.data.price !== '' && resp.data.price !== undefined) ? resp.data.price: '';
+        if (price) {
           const { meta } = resp.data;
           data[key].price = price;
           data[key].meta = meta;
