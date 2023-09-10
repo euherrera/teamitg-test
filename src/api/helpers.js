@@ -5,6 +5,6 @@
  * @return {Promise<Object>}
  */
 export async function request(apiUrl) {
-  console.log(apiUrl)
+  console.log(apiUrl);
   return apiUrl;
 }

@@ -3,6 +3,8 @@
   margin: 0; 
   padding: 0;
 }
+$black: #000;
+$white: #fff;
 
 .root {
   margin: 0 !important;
@@ -10,7 +12,7 @@
 }
 
 body {
-  background: black;
+  background: $black;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -39,7 +41,7 @@ body {
   }
 
   &__col {
-    background: white;
+    background: $white;
     padding-bottom: 10px;
         
     text-align: center;
@@ -57,13 +59,14 @@ body {
   }
 
 }
+
 .main img {
   
-    width: 100%;
+  width: 100%;
 
-    @media all and (max-width:767px) {
-      width: 150px;
-    }
+  @media all and (max-width:767px) {
+    width: 150px;
+  }
   
 }
 
@@ -75,8 +78,8 @@ body {
     text-transform: uppercase;
 
     span {
-      border-bottom: 3px solid black;
-      border-top: 3px solid black;
+      border-bottom: 3px solid $black;
+      border-top: 3px solid $black;
     }
         
   }
@@ -104,7 +107,7 @@ body {
   position: relative;
 
   .overlay {
-    background: rgba(255,255,255);
+    background: $white;
     display: none;
     height: 100%;
     left: 0;

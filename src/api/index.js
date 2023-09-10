@@ -33,7 +33,7 @@ export default async function getData() {
       })
 
   ));
-  request(arr)
+  request(arr);
   await axios.get(arr);
   // console.log(arr);
   return arr;
