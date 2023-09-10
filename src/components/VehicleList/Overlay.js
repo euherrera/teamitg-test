@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
-import useData  from './useData';
+import React, { useState } from 'react';
+import useData from './useData';
 import Popup from './Popup';
 
 const Overlay = (props) => {
   // console.log(props.url)
   const [loading, error] = useData();
-  const { template, value, id, description } = props;
+  const {
+    template, value, id, description
+  } = props;
 
   const [showModal, setShowModal] = useState(false);
 
@@ -17,25 +19,25 @@ const Overlay = (props) => {
     return <div data-testid="error">{ error }</div>;
   }
 
-
   return (
     <div className="overlayInner">
       <div>
         <h1>{template}</h1>
         <h2>{value}</h2>
-        <a onClick={() => setShowModal(!showModal)}>
-          
-        
-        {showModal && 
-        <Popup 
+        <button type="button" onClick={() => setShowModal(!showModal)}>
+
+          {showModal
+        && (
+        <Popup
           setShowModal={setShowModal}
           id={id}
           description={description}
         />
-        
-        }Read more...</a>
+        )}
+          Read more...
+        </button>
       </div>
-     
+
     </div>
   );
 };

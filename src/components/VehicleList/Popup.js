@@ -2,9 +2,8 @@ import React from 'react';
 
 const Popup = (props) => {
   // console.log(props.url)
-  
-  const { id, description } = props;
 
+  const { id, description } = props;
 
   return (
     <div className="popupInner">

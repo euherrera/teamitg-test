@@ -17,7 +17,7 @@ export default async function getData() {
   ));
 
   let price;
-  const arr = new Array();
+  const arr = [];
   Object.entries(url).map(([key, value]) => (
 
     axios.get(value)
@@ -40,6 +40,6 @@ export default async function getData() {
   ));
   request(arr);
   await axios.get(arr);
-  console.log(arr);
+  // console.log(arr);
   return arr;
 }

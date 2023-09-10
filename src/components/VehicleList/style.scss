@@ -130,17 +130,22 @@ body {
   height: 100%;
   justify-content: center;
   text-align: center;
-  a{
-    cursor:pointer;
+
+  button {
+    background: white;
+    cursor: pointer;
   }
-  h2{
+
+  h2 {
     padding-bottom: 10px;
   }
 }
 
 .popupInner {
-  div{
-    p{
+
+  div {
+
+    p {
       padding-bottom: 10px;
     }
   }
