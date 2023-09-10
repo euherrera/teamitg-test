@@ -1,6 +1,6 @@
 import React from 'react';
 import useData from './useData';
-import Partial from './Partial';
+import Overlay from './Overlay';
 import './style.scss';
 
 const VehicleList = () => {
@@ -46,7 +46,7 @@ const VehicleList = () => {
                       </div>
                     </div>
                     <div className="overlay">
-                      <Partial
+                      <Overlay
                         template={vehicle.meta.emissions.template}
                         value={vehicle.meta.emissions.value}
                       />

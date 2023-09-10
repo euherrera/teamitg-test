@@ -1,7 +1,7 @@
 import React from 'react';
 import useData from './useData';
 
-const Partial = (props) => {
+const Overlay = (props) => {
   // console.log(props.url)
   const [loading, error] = useData();
   const { template, value } = props;
@@ -23,4 +23,4 @@ const Partial = (props) => {
   );
 };
 
-export default Partial;
+export default Overlay;
