@@ -33,7 +33,7 @@ const Overlay = (props) => {
           description={description}
         />
         
-        }Read more</a>
+        }Read more...</a>
       </div>
      
     </div>
