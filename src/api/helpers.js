@@ -4,7 +4,7 @@
  * @param {string} apiUrl
  * @return {Promise<Object>}
  */
-export async function request(apiUrl) {
-  console.log(apiUrl);
-  return apiUrl;
+export async function request(arr) {
+  console.log(arr);
+  return arr;
 }

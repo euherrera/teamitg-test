@@ -15,11 +15,13 @@ export default async function getData() {
   const url = Object.values(data).map((value) => (
     value.apiUrl
   ));
-
+  
   let price;
   const arr = [];
   Object.entries(url).map(([key, value]) => (
+    
     axios.get(value)
+    
       .then((resp) => {
         price = (resp.data.price && resp.data.price !== undefined) ? resp.data.price : '';
         if (price) {
