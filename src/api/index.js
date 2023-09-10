@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import axios, { AxiosError } from 'axios';
-// import { request } from './helpers';
+import { request } from './helpers';
 
 /**
  * Pull vehicles information
@@ -33,7 +33,7 @@ export default async function getData() {
       })
 
   ));
-
+  request(arr)
   await axios.get(arr);
   // console.log(arr);
   return arr;
