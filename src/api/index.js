@@ -21,7 +21,7 @@ export default async function getData() {
   Object.entries(url).map(([key, value]) => (
     axios.get(value)
       .then((resp) => {
-        price = (resp.data.price !== '' && resp.data.price !== undefined) ? resp.data.price: '';
+        price = (resp.data.price !== '' && resp.data.price !== undefined) ? resp.data.price : '';
         if (price) {
           const { meta } = resp.data;
           data[key].price = price;
@@ -38,4 +38,3 @@ export default async function getData() {
   // console.log(arr);
   return arr;
 }
-

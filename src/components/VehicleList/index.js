@@ -20,13 +20,13 @@ const VehicleList = () => {
     <main className="main" data-testid="results">
       {vehicles.map((vehicle) => {
         return (
-          <section className="main--row" key={vehicle.id}>
+          <section className="main__row" key={vehicle.id}>
 
             {vehicle.media.map((media, index) => {
               return (index === 0)
                 ? (
                   <div className="relative">
-                    <div className="main--row__col" key={vehicle.id}>
+                    <div className="main__col" key={vehicle.id}>
                       <div>
                         <img src={media.url} alt="vehicle" />
                       </div>
@@ -39,7 +39,7 @@ const VehicleList = () => {
                           </span>
                         </p>
                         <p>
-                          From 
+                          From
                           <span className="price">{vehicle.price}</span>
                         </p>
                         <p>The pinnacle of refined capability</p>

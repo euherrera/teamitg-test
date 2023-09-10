@@ -9,13 +9,9 @@
   padding: 0 !important;
 }
 
-.VehicleList {
-  width: 100%;
-}
-
 body {
   background: black;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .main {
@@ -29,7 +25,7 @@ body {
     display: flex;
     flex-flow: row wrap;
 
-    &--row {
+    &__row {
       flex: 0 0 50%;
     }
   }
@@ -37,46 +33,37 @@ body {
   @media all and (max-width: 768px) {
     flex-flow: column;
   }
+
   @media all and (max-width: 1023px) {
     transform: translate(0,0);
   }
 
-}
-
-.main--row__col {
-  background: white;
-  padding-bottom: 10px;
-      
-  text-align: center;
-
-  @media all and (min-width:600px) {
-    flex: 1 1 0;
-  }
-
-  @media all and (max-width:767px) {
-    display: flex;
+  &__col {
+    background: white;
+    padding-bottom: 10px;
         
-  }
-      
-  img {
-    width: 100%;
-
-    @media all and (max-width:767px) {
-      width: 150px;
-    }
-  }
-
+    text-align: center;
   
-}
-
-.card {
-  @media all and (max-width:767px) {
-
-    &:nth-child(2) {
+    @media all and (min-width:600px) {
+      flex: 1 1 0;
+    }
+  
+    @media all and (max-width:767px) {
+      display: flex;
+          
+    }
+        
+    &img {
       width: 100%;
+  
+      @media all and (max-width:767px) {
+        width: 150px;
+      }
     }
   }
+
 }
+
 
 .card {
   padding: 10px;
@@ -93,11 +80,20 @@ body {
   }
 
   p {
-    span{
+
+    span {
       padding-left: 5px;
     }
+
     &:nth-child(2) {
       padding: 10px;
+    }
+  }
+
+  @media all and (max-width:767px) {
+
+    &:nth-child(2) {
+      width: 100%;
     }
   }
 }
