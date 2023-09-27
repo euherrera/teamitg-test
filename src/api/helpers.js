@@ -6,7 +6,7 @@
  */
 import axios from 'axios';
 export async function request() {
-  const res = await axios.get('/api/vehicles.json/');
+  const res = await axios.get('/api/vehicles.json');
   const { data } = res;
 
   const url = Object.values(data).map((value) => (
