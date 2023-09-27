@@ -15,9 +15,11 @@ const VehicleList = () => {
     return <div data-testid="error">{ error }</div>;
   }
 
-  return (
+  if (vehicles) {
 
-    <main className="main" data-testid="results">
+  return (
+    <div data-testid="results">
+    <main className="main" >
       {vehicles.map((vehicle) => {
         return (
           <section className="main__row" key={vehicle.id}>
@@ -61,7 +63,8 @@ const VehicleList = () => {
         );
       })}
     </main>
-
+    </div>
   );
 };
+}
 export default VehicleList;
