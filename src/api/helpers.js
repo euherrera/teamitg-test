@@ -17,22 +17,26 @@ export async function request() {
 
 async function cleanData(allData) {
   console.log(allData)
+  
   Object.entries(allData).map(async([key, value])  => (
+    
     res = await axios.get(value.apiUrl),
+   
     allData[key].price = res.data.price,
     allData[key].meta = res.data.meta,
     allData[key].id = res.data.id,
     allData[key].description = res.data.description,
     (res.data.price  && res.data.price !== undefined) ? arr.push(allData[key]) : ''
-    
+    //count = arr.length
   ))
+  
   
   return arr;
   
 
 }
 async function returnMod(allData) {
- 
+   
     await axios.get(allData);
     console.log(allData.length)
     return  (allData.length === 4) ? allData : '';
