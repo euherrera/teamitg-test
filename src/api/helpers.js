@@ -32,9 +32,9 @@ async function cleanUserData(userData) {
 
 }
 async function saveToDataBase(userData) {
-  console.log('Saving to DB'); 
+ 
     await axios.get(userData);
-    console.log(userData)
+    console.log(userData.length)
     return  userData;
    
 }
