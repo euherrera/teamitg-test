@@ -15,15 +15,15 @@ export async function request() {
   return data
 }
 
-async function cleanData(userData) {
-  console.log(userData)
-  Object.entries(userData).map(async([key, value])  => (
+async function cleanData(allData) {
+  console.log(allData)
+  Object.entries(allData).map(async([key, value])  => (
     res = await axios.get(value.apiUrl),
-    userData[key].price = res.data.price,
-    userData[key].meta = res.data.meta,
-    userData[key].id = res.data.id,
-    userData[key].description = res.data.description,
-    (res.data.price  && res.data.price !== undefined) ? arr.push(userData[key]) : ''
+    allData[key].price = res.data.price,
+    allData[key].meta = res.data.meta,
+    allData[key].id = res.data.id,
+    allData[key].description = res.data.description,
+    (res.data.price  && res.data.price !== undefined) ? arr.push(allData[key]) : ''
     
   ))
   
@@ -31,17 +31,17 @@ async function cleanData(userData) {
   
 
 }
-async function returnMod(userData) {
+async function returnMod(allData) {
  
-    await axios.get(userData);
-    console.log(userData.length)
-    return  userData;
+    await axios.get(allData);
+    console.log(allData.length)
+    return  allData;
    
 }
 
 async function cleanAndSaveData() {
-  const userData = await getData();
-  const cleanedData = await cleanData(userData);
+  const allData = await getData();
+  const cleanedData = await cleanData(allData);
   console.log('cleaned data',cleanedData)
   return await returnMod(cleanedData);
 }
