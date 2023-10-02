@@ -9,13 +9,13 @@ export async function request() {
 
  let arr = [];
  let res;
- async function getUserData() {
+ async function getData() {
   let resp = await axios.get('/api/vehicles.json');
   const {data}  = resp;
   return data
 }
 
-async function cleanUserData(userData) {
+async function cleanData(userData) {
   console.log(userData)
   Object.entries(userData).map(async([key, value])  => (
     res = await axios.get(value.apiUrl),
@@ -31,7 +31,7 @@ async function cleanUserData(userData) {
   
 
 }
-async function saveToDataBase(userData) {
+async function returnMod(userData) {
  
     await axios.get(userData);
     console.log(userData.length)
@@ -39,12 +39,12 @@ async function saveToDataBase(userData) {
    
 }
 
-async function cleanAndSaveUserData() {
-  const userData = await getUserData();
-  const cleanedData = await cleanUserData(userData);
+async function cleanAndSaveData() {
+  const userData = await getData();
+  const cleanedData = await cleanData(userData);
   console.log('cleaned data',cleanedData)
-  return await saveToDataBase(cleanedData);
+  return await returnMod(cleanedData);
 }
-return cleanAndSaveUserData(); // does all the work
+return cleanAndSaveData(); 
   
 }
