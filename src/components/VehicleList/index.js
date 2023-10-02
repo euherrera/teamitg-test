@@ -16,12 +16,13 @@ const VehicleList = () => {
   }
 
   if (vehicles) {
-
+  console.log('vehilces:', vehicles)
   return (
     <div data-testid="results">
     <main className="main" >
       {vehicles.map((vehicle) => {
         return (
+          
           <section className="main__row" key={vehicle.id}>
 
             {vehicle.media.map((media, index) => {
@@ -32,6 +33,7 @@ const VehicleList = () => {
                       <div>
                         <img src={media.url} alt="vehicle" />
                       </div>
+                      
                       <div className="card">
                         <p className="title">
                           <span>
@@ -49,8 +51,8 @@ const VehicleList = () => {
                     </div>
                     <div className="overlay">
                       <Overlay
-                        template={vehicle.meta.emissions.template}
-                        value={vehicle.meta.emissions.value}
+                        //template={vehicle.meta.emissions.template}
+                        //value={vehicle.meta.emissions.value}
                         id={vehicle.id}
                         description={vehicle.description}
                       />
