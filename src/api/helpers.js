@@ -35,7 +35,7 @@ async function returnMod(allData) {
  
     await axios.get(allData);
     console.log(allData.length)
-    return  allData;
+    return  (allData.length === 4) ? allData : '';
    
 }
 
