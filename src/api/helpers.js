@@ -10,44 +10,63 @@ export async function request() {
  let arr = [];
  let res;
  async function getData() {
-  let resp = await axios.get('/api/vehicles.json');
-  const {data}  = resp;
-  return data
+  try{
+    let resp = await axios.get('/api/vehicles.json');
+    const {data}  = resp;
+    return data
+  }catch(error){
+    console.log(error)
+  }
+  
 }
 
 async function cleanData(allData) {
-  console.log(allData)
-  
-  Object.entries(allData).map(async([key, value])  => (
+  // console.log(allData)
+  try{
+    Object.entries(allData).map(async([key, value])  => (
     
-    res = await axios.get(value.apiUrl),
-   
-    allData[key].price = res.data.price,
-    allData[key].meta = res.data.meta,
-    allData[key].id = res.data.id,
-    allData[key].description = res.data.description,
-    (res.data.price  && res.data.price !== undefined) ? arr.push(allData[key]) : ''
-    //count = arr.length
-  ))
+      res = await axios.get(value.apiUrl),
+     
+      allData[key].price = res.data.price,
+      allData[key].meta = res.data.meta,
+      allData[key].id = res.data.id,
+      allData[key].description = res.data.description,
+      (res.data.price && res.data.price !== undefined) ?  arr.push(allData[key]) : ''
+      
+    ))
+    
+    
+    return  arr;
+  }catch(error){
+    console.log(error)
+  }
   
-  
-  return arr;
   
 
 }
 async function returnMod(allData) {
-   
-    await axios.get(allData);
-    console.log(allData.length)
-    return  (allData.length === 4) ? allData : '';
+    try {
+      await axios.get(allData);
+      console.log(allData.length)
+      return allData;
+    }catch(error){
+      console.log(error)
+      return error
+    }
+    
    
 }
 
 async function cleanAndSaveData() {
-  const allData = await getData();
-  const cleanedData = await cleanData(allData);
-  console.log('cleaned data',cleanedData)
-  return await returnMod(cleanedData);
+  try {
+    const allData = await getData();
+    const cleanedData = await cleanData(allData);
+    console.log('cleaned data',cleanedData)
+    return await returnMod(cleanedData);
+  }catch(error){
+    console.log(error)
+  }
+  
 }
 return cleanAndSaveData(); 
   

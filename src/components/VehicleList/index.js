@@ -11,20 +11,21 @@ const VehicleList = () => {
     return <div data-testid="loading">Loading</div>;
   }
 
-  if (error) {
-    return <div data-testid="error">{ error }</div>;
-  }
+ 
 
   if (vehicles) {
+   
   console.log('vehilces:', vehicles)
   return (
     <div data-testid="results">
     <main className="main" >
       {vehicles.map((vehicle) => {
+       
+      
         return (
           
           <section className="main__row" key={vehicle.id}>
-
+            {vehicle.id}
             {vehicle.media.map((media, index) => {
               return (index === 0)
                 ? (
@@ -62,11 +63,13 @@ const VehicleList = () => {
                 : '';
             })}
           </section>
-        );
+        )
       })}
     </main>
     </div>
   );
-};
+} else if (error) {
+  return <div data-testid="error">{ error }</div>;
+}
 }
 export default VehicleList;
