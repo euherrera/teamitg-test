@@ -15,7 +15,7 @@ export async function request() {
     const {data}  = resp;
     return data
   }catch(error){
-    console.log(error)
+    console.log(error.message)
   }
   
 }
@@ -38,7 +38,7 @@ async function cleanData(allData) {
     
     return  arr;
   }catch(error){
-    console.log(error)
+    console.log(error.message)
   }
   
   
@@ -50,8 +50,8 @@ async function returnMod(allData) {
       console.log(allData.length)
       return allData;
     }catch(error){
-      console.log(error)
-      return error
+      console.log(error.message)
+     
     }
     
    
@@ -64,7 +64,7 @@ async function cleanAndSaveData() {
     console.log('cleaned data',cleanedData)
     return await returnMod(cleanedData);
   }catch(error){
-    console.log(error)
+    console.log(error.message)
   }
   
 }
